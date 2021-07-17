@@ -48,6 +48,7 @@ body{
   width: 25%;
   align-self: flex-start;
   margin-left: 4em;
+  transform: translateY(-150%);
 }
 }
 .hero__image{
