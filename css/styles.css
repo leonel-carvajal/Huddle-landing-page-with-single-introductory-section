@@ -11,17 +11,45 @@ body{
   font-weight: 400;
   background-color: var(--Violet);
   color: var(--white);
-  margin-bottom: 5em;
 }
 .header{
   height: 375px;
   background-image: url('../images/bg-mobile.svg');
   background-repeat: no-repeat;
 }
+@media screen and (min-width:1024px) {
+    body{
+      height: 100vh;
+      overflow: hidden;
+      background-image: url('../images/bg-desktop.svg');
+      background-repeat: no-repeat;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 1fr 1fr 100px;
+    }
+    .header{
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: none;
+      place-self: center;
+    }
+    .main{
+      grid-row: span 2;
+      place-self: center start;
+    }
+}
 .header__img{
   width: 50%;
 }
-
+@media screen and (min-width:1024px) {
+  .header__img{
+  width: 25%;
+  align-self: flex-start;
+  margin-left: 4em;
+}
+}
 .hero__image{
   display:block;
   width: 80%;
@@ -42,6 +70,21 @@ body{
   margin-left: auto;
   margin-right: auto
 }
+@media screen  and (min-width:1024px){
+  .title{
+    width:50%;
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: left;
+  }
+  .info{
+    width: 75%;
+    margin: 0;
+    margin-bottom: 25px;
+    line-height: 1.6em;
+  }
+}
 .link{
   display: block;
   width: 200px;
@@ -54,9 +97,21 @@ body{
   background-color: var(--white);
   color: var(--Violet);
   border-radius: 20px;
+  box-shadow: 3px 5px 8px rgb( 0 0 0/0.25);
+}
+@media screen  and (min-width:1024px){
+  .link{
+    margin: 0;
+    padding: 0.9em;
+  }
+  .link:hover{
+    background-color: var(--Soft-Magenta);
+    color: var(--white);
+  }
 }
 .footer{
   margin-top: 50px;
+  margin-bottom: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,8 +119,22 @@ body{
 .footer__link{
   text-decoration: none;
   color: var(--white);
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .fab{
   font-size: 1.2rem;
+}
+@media screen  and (min-width:1024px){
+  .footer{
+    margin-right: 5em;
+    place-self: end;
+    grid-row: 3/4;
+    grid-column: span 2;
+  }
+  .fab{
+    font-size: 1.8rem;
+  }
+  .fab:hover{
+    color: var(--Soft-Magenta);
+  }
 }
